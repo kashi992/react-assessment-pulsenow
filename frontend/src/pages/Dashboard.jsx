@@ -124,13 +124,17 @@ const Dashboard = () => {
               {topLosers.map((item) => (
                 <li
                   key={item.symbol}
-                  className="flex items-center justify-between"
+                  className="grid items-center gap-3"
+                style={{gridTemplateColumns: "1fr auto auto"}}
                 >
                   <div>
                     <span className="font-medium mr-2">{item.symbol}</span>
                     <span className="text-gray-500">{item.name}</span>
                   </div>
-                  <span className="text-red-500">
+                      <span className="text-gray-700 text-sm block">
+                    ${item.currentPrice?.toLocaleString()}
+                  </span>
+                  <span className="text-red-500 block">
                     {item.changePercent}%
                   </span>
                 </li>
